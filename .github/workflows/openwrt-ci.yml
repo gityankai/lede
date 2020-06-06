@@ -7,12 +7,12 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 # 
 
-name: OpenWrt-G
+name: OpenWrt-G 2020-6-6
 
 on:
   release:
     types: [published]
-  #push:
+  push:
     branches: 
       - master
   #     ↑↑↑ 改成你的分支名, 一般是master
@@ -76,7 +76,7 @@ jobs:
         run: |
           rm -f ./.config*
           touch ./.config
-          cp -f passwall.config ./.config
+          cp -f kai.config ./.config
           make defconfig
 
       - name: Make download
